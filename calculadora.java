@@ -184,7 +184,11 @@ public class Calculadora {
             System.out.println(" ");
             numero2 = in.nextDouble();
         }
-        resultado = dividir(numero1, numero2);//llamo funcion
+        if (numero1 >= numero2){
+            resultado = dividir(numero1, numero2);//llamo funcion
+        } else {
+            resultado = dividir(numero2, numero1);//llamo funcion
+        }
         System.out.println("   ");
         System.out.println("La divison es de " + resultado);
     }
