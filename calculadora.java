@@ -124,7 +124,11 @@ public class Calculadora {
         System.out.println(" Segundo Numero: ");
         System.out.println("   ");
         numero2 = in.nextDouble();
-        resultado = restar(numero1, numero2);//llamo funcion resta
+        if (numero1 >= numero2){
+            resultado = restar(numero1, numero2); //llamo funcion resta
+        } else {
+            resultado = restar(numero2, numero1);//llamo funcion resta
+        }
         System.out.println("   ");
         System.out.println("La resta es de " + resultado);
     }
