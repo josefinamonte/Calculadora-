@@ -33,28 +33,36 @@ class Main {
   }
 
 
-  public static double sumar(double numero1, double numero2){ //creo funcion sumar
-    double resultado;
+  public static int sumar(int numero1, int numero2){ //creo funcion sumar
+    int resultado;
     resultado = numero1+numero2;
     return resultado;
   }
 
-  public static double restar(double numero1, double numero2){ //creo funcion restar
-    double resultado;
-    resultado = numero1-numero2;
+  public static int restar(int numero1, int numero2){ //creo funcion restar
+    int resultado;
+    if (numero1>numero2){
+      resultado = numero1-numero2;
+    }else{
+      resultado = numero2 - numero1;
+    }
     return resultado; 
   }
 
-  public static double multiplicar(double numero1, double numero2) { 
+  public static int multiplicar(int numero1, int numero2) { 
     //creo funcion multiplicar
-    double resultado;
+    int resultado;
     resultado = numero1*numero2;
     return resultado; 
   }
   
-  public static double dividir(double numero1, double numero2){//creo funcion dividir
-    double resultado;
-    resultado = numero1/numero2;
+  public static int dividir(int numero1, int numero2){//creo funcion dividir
+    int resultado;
+    if (numero1<numero2){
+      resultado = numero2/numero1;
+    }else{
+      resultado = numero1/numero2;
+    }
     return resultado; 
   }
   
@@ -78,10 +86,11 @@ class Main {
 
   public static void casoUno() {//creo procedimiento caso suma
     Scanner in =  new Scanner(System.in);
+    int respuesta; //defino una variable respuesta que será usada para repetir la suma.
      
-    double numero1=0;
-    double numero2=0; 
-    double resultado;
+    int numero1=0;
+    int numero2=0; 
+    int resultado;
     
     System.out.println("   ");
     System.out.println(" Usted eligio SUMA ");
@@ -90,23 +99,41 @@ class Main {
     System.out.println("   ");
     System.out.println(" Primer Numero: ");
     System.out.println("   ");
-    numero1=in.nextDouble();
+    numero1=in.nextInt();
+    do{
+      if (numero1<0){
+        System.out.println("Ingrese un valor valido (entero positivo)");
+        numero1=in.nextInt();
+      }
+    }while(numero1<0);
     System.out.println("   ");
     System.out.println(" Segundo Numero: ");
     System.out.println("   ");
-    numero2=in.nextDouble();
+    numero2=in.nextInt();
+    do{
+      if (numero2<0){
+        System.out.println("Ingrese un valor valido (entero positivo)");
+        numero2=in.nextInt();
+      } 
+    }while(numero2<0);
     resultado=sumar(numero1,numero2);//llamo funcion suma
     System.out.println("   ");
     System.out.println("La SUMA es de "+resultado);
+    System.out.println("Desea hacer otra suma? [1]/[0] (uno para si y cero para no)");
+    respuesta = in.nextInt();
+    if (respuesta == 1){
+      casoUno();
+    }
     }
 
     public static void casoDos() {
         //creo procedimiento caso resta
         Scanner in = new Scanner(System.in);
+        int respuesta;
 
-        double numero1 = 0;
-        double numero2 = 0;
-        double resultado;
+        int numero1 = 0;
+        int numero2 = 0;
+        int resultado;
 
         System.out.println("   ");
         System.out.println(" Usted eligio RESTA ");
@@ -115,23 +142,41 @@ class Main {
         System.out.println("   ");
         System.out.println(" Primer Numero: ");
         System.out.println("   ");
-        numero1 = in.nextDouble();
+        numero1=in.nextInt();
+        do{
+          if (numero1<0){
+            System.out.println("Ingrese un valor valido (entero positivo)");
+            numero1=in.nextInt();
+          }
+        }while(numero1<0);
         System.out.println("   ");
         System.out.println(" Segundo Numero: ");
         System.out.println("   ");
-        numero2 = in.nextDouble();
+        numero2=in.nextInt();
+        do{
+          if (numero2<0){
+            System.out.println("Ingrese un valor valido (entero positivo)");
+            numero2=in.nextInt();
+          } 
+        }while(numero2<0);
         resultado = restar(numero1, numero2);//llamo funcion resta
         System.out.println("   ");
         System.out.println("La resta es de " + resultado);
+        System.out.println("Desea hacer otra resta? [1]/[0] (uno para si y cero para no)");
+        respuesta= in.nextInt();
+        if (respuesta == 1){
+          casoDos();
+        }
     }
 
   public static void casoTres() { 
    //creo procedimiento caso multiplicacion
     Scanner in =  new Scanner(System.in);
+    int respuesta;
      
-    double numero1=0;
-    double numero2=0; 
-    double resultado;
+    int numero1=0;
+    int numero2=0; 
+    int resultado;
     
     System.out.println("   ");
     System.out.println(" Usted eligio MULTIPLICACION ");
@@ -140,23 +185,41 @@ class Main {
     System.out.println("   ");
     System.out.println(" Primer Numero: ");
     System.out.println("   ");
-    numero1=in.nextDouble();
+    numero1=in.nextInt();
+    do{
+      if (numero1<0){
+        System.out.println("Ingrese un valor valido (entero positivo)");
+        numero1=in.nextInt();
+      }
+    }while(numero1<0);
     System.out.println("   ");
     System.out.println(" Segundo Numero: ");
     System.out.println("   ");
-    numero2=in.nextDouble();
+    numero2=in.nextInt();
+    do{
+      if (numero2<0){
+        System.out.println("Ingrese un valor valido (entero positivo)");
+        numero2=in.nextInt();
+      } 
+    }while(numero2<0);
     resultado=multiplicar(numero1,numero2);
     //llamo funcion multiplicar
     System.out.println("   ");
     System.out.println("La multiplicacion es de "+resultado);
-    }
+    System.out.println("Desea hacer otra multiplicacion? [1]/[0] (uno para si y cero para no)");
+    respuesta= in.nextInt();
+        if (respuesta == 1){
+          casoTres();
+        }
+  }
 
     public static void casoCuatro() {//creo procedimiento division
         Scanner in = new Scanner(System.in);
+        int respuesta;
 
-        double numero1 = 0;
-        double numero2 = 0;
-        double resultado;
+        int numero1 = 0;
+        int numero2 = 0;
+        int resultado;
 
         System.out.println("   ");
         System.out.println(" Usted eligio DIVISION ");
@@ -165,19 +228,36 @@ class Main {
         System.out.println("   ");
         System.out.println(" Primer Numero: ");
         System.out.println("   ");
-        numero1 = in.nextDouble();
+        numero1=in.nextInt();
+        do{
+          if (numero1<0){
+            System.out.println("Ingrese un valor valido (entero positivo)");
+            numero1=in.nextInt();
+          }
+        }while(numero1<0);
         System.out.println("   ");
         System.out.println(" Segundo Numero: ");
         System.out.println("   ");
-        numero2 = in.nextDouble();//controlo numer dos que no sea 0
+        numero2=in.nextInt();
+        do{
+          if (numero2<0){
+            System.out.println("Ingrese un valor valido (entero positivo)");
+            numero2=in.nextInt();
+          } 
+        }while(numero2<0);//controlo numer dos que no sea 0
         while (numero2 == 0) {
             System.out.println("No se puede dividir con 0");
             System.out.println("Por favor ingrese un nuevo valor");
             System.out.println(" ");
-            numero2 = in.nextDouble();
+            numero2 = in.nextInt();
         }
         resultado = dividir(numero1, numero2);//llamo funcion
         System.out.println("   ");
         System.out.println("La divison es de " + resultado);
+        System.out.println("Desea hacer otra division? [1]/[0] (uno para si y cero para no)");
+        respuesta= in.nextInt();
+        if (respuesta == 1){
+          casoCuatro();
+        }
     }
 }
