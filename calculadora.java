@@ -100,29 +100,29 @@ class Main {
     System.out.println("La SUMA es de "+resultado);
     }
 
-   public static void casoDos() { 
-   //creo procedimiento caso resta
-    Scanner in =  new Scanner(System.in);
-     
-    double numero1=0;
-    double numero2=0; 
-    double resultado;
-    
-    System.out.println("   ");
-    System.out.println(" Usted eligio RESTA ");
-    System.out.println("   ");
-    System.out.println(" Por favor ingrese los numeros que desea restar ");
-    System.out.println("   ");
-    System.out.println(" Primer Numero: ");
-    System.out.println("   ");
-    numero1=in.nextDouble();
-    System.out.println("   ");
-    System.out.println(" Segundo Numero: ");
-    System.out.println("   ");
-    numero2=in.nextDouble();
-    resultado=restar(numero1,numero2);//llamo funcion resta
-    System.out.println("   ");
-    System.out.println("La resta es de "+resultado);
+    public static void casoDos() {
+        //creo procedimiento caso resta
+        Scanner in = new Scanner(System.in);
+
+        double numero1 = 0;
+        double numero2 = 0;
+        double resultado;
+
+        System.out.println("   ");
+        System.out.println(" Usted eligio RESTA ");
+        System.out.println("   ");
+        System.out.println(" Por favor ingrese los numeros que desea restar ");
+        System.out.println("   ");
+        System.out.println(" Primer Numero: ");
+        System.out.println("   ");
+        numero1 = in.nextDouble();
+        System.out.println("   ");
+        System.out.println(" Segundo Numero: ");
+        System.out.println("   ");
+        numero2 = in.nextDouble();
+        resultado = restar(numero1, numero2);//llamo funcion resta
+        System.out.println("   ");
+        System.out.println("La resta es de " + resultado);
     }
 
   public static void casoTres() { 
@@ -150,34 +150,34 @@ class Main {
     System.out.println("   ");
     System.out.println("La multiplicacion es de "+resultado);
     }
-  
-  public static void casoCuatro() {//creo procedimiento division
-    Scanner in =  new Scanner(System.in);
-    
-    double numero1=0;
-    double numero2=0; 
-    double resultado;
-    
-    System.out.println("   ");
-		System.out.println(" Usted eligio DIVISION ");
-    System.out.println("   ");
-		System.out.println(" Por favor ingrese los numeros que desea dividir ");
-    System.out.println("   ");
-		System.out.println(" Primer Numero: ");
-    System.out.println("   ");
-		numero1=in.nextDouble();
-    System.out.println("   ");
-		System.out.println(" Segundo Numero: ");
-    System.out.println("   ");
-    numero2=in.nextDouble();//controlo numer dos que no sea 0
-    while (numero2==0){
-      System.out.println("No se puede dividir con 0");
-      System.out.println("Por favor ingrese un nuevo valor");
-      System.out.println(" ");
-      numero2=in.nextDouble();
-    }    
-    resultado=dividir(numero1,numero2);//llamo funcion
-    System.out.println("   ");
-    System.out.println("La divison es de "+resultado);
-  } 
+
+    public static void casoCuatro() {//creo procedimiento division
+        Scanner in = new Scanner(System.in);
+
+        double numero1 = 0;
+        double numero2 = 0;
+        double resultado;
+
+        System.out.println("   ");
+        System.out.println(" Usted eligio DIVISION ");
+        System.out.println("   ");
+        System.out.println(" Por favor ingrese los numeros que desea dividir ");
+        System.out.println("   ");
+        System.out.println(" Primer Numero: ");
+        System.out.println("   ");
+        numero1 = in.nextDouble();
+        System.out.println("   ");
+        System.out.println(" Segundo Numero: ");
+        System.out.println("   ");
+        numero2 = in.nextDouble();//controlo numer dos que no sea 0
+        while (numero2 == 0) {
+            System.out.println("No se puede dividir con 0");
+            System.out.println("Por favor ingrese un nuevo valor");
+            System.out.println(" ");
+            numero2 = in.nextDouble();
+        }
+        resultado = dividir(numero1, numero2);//llamo funcion
+        System.out.println("   ");
+        System.out.println("La divison es de " + resultado);
+    }
 }
