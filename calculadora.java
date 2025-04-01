@@ -1,4 +1,3 @@
-
 package calculadora;
 import java.util.Scanner;
 
@@ -65,7 +64,7 @@ public class Calculadora {
         System.out.println("SELECCIONAR UNA OPCIÓN [0 a 4] Y PRESIONAR ENTER: __ ");
         System.out.println("       ");
         System.out.println("************************************************************");
-        System.out.println("       ");
+        System.out.println("  ");
         System.out.print("");
     }
 
@@ -75,9 +74,7 @@ public class Calculadora {
         double numero1 = 0;
         double numero2 = 0;
         double resultado;
-        double respuesta;
 
-        do {
         System.out.println("   ");
         System.out.println(" Usted eligio SUMA ");
         System.out.println("   ");
@@ -103,17 +100,7 @@ public class Calculadora {
         resultado = sumar(numero1, numero2);//llamo funcion suma
         System.out.println("   ");
         System.out.println("La SUMA es de " + resultado);
-        System.out.println(" ¿Desea efectuar una nueva suma?");
-        System.out.println(" [1] - SI");
-        System.out.println(" [0] - NO");
-        do{
-        respuesta = in.nextDouble();
-            if (respuesta!=0) or (respuesta!=1){
-                System.out.println("El numero debe ser 0 o 1");
-            }
-        } while (respuesta!=0) or (respuesta!=1);
-
-    } while (respuesta == 0);
+      
 
     }
 
