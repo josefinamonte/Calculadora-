@@ -125,19 +125,18 @@ class Main {
     while (respuesta != 0) {
       try {
           System.out.println("Desea hacer otra suma? [1 para sí, 0 para no]:");
-          String entrada = in.nextLine(); // Captura la entrada como cadena
-          respuesta = Integer.parseInt(entrada); // Convierte la entrada a entero
+          respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
   
           if (respuesta == 1) {
               casoUno(); // Llama al procedimiento
           } else if (respuesta == 0) {
               menu(); // Llama al menú si decide no realizar más sumas
           } else {
-              System.out.println("Por favor, ingrese un valor válido (1 para sí, 0 para no): ");
+              System.out.println("Por favor, ingrese un valor válido.");
           }
       } catch (NumberFormatException e) {
-          System.out.println("Error: Por favor, ingrese un número válido (1 para sí, 0 para no).");
-          respuesta = -1; // Asigna un valor fuera del rango válido para reiniciar el bucle
+          System.out.println("Error: Por favor, ingrese un número válido.");
+          respuesta = -1; // Asigna un valor fuera del rango válido para reiniciar el bucle          
       }
     }
   }
