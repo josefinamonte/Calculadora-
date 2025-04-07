@@ -89,7 +89,7 @@ class Main {
 
   public static void casoUno() {//creo procedimiento caso suma
     Scanner in =  new Scanner(System.in);
-    int respuesta; //defino una variable respuesta que será usada para repetir la suma.
+    int respuesta = -1; //defino una variable respuesta que será usada para repetir la suma.
      
     int numero1=0;
     int numero2=0; 
@@ -122,12 +122,25 @@ class Main {
     resultado=sumar(numero1,numero2);//llamo funcion suma
     System.out.println("   ");
     System.out.println("La SUMA es de "+resultado);
-    System.out.println("Desea hacer otra suma? [1]/[0] (uno para si y cero para no)");
-    respuesta = in.nextInt();
-    if (respuesta == 1){
-      casoUno();
+    while (respuesta != 0) {
+      try {
+          System.out.println("Desea hacer otra suma? [1 para sí, 0 para no]:");
+          String entrada = in.nextLine(); // Captura la entrada como cadena
+          respuesta = Integer.parseInt(entrada); // Convierte la entrada a entero
+  
+          if (respuesta == 1) {
+              casoUno(); // Llama al procedimiento
+          } else if (respuesta == 0) {
+              menu(); // Llama al menú si decide no realizar más sumas
+          } else {
+              System.out.println("Por favor, ingrese un valor válido (1 para sí, 0 para no): ");
+          }
+      } catch (NumberFormatException e) {
+          System.out.println("Error: Por favor, ingrese un número válido (1 para sí, 0 para no).");
+          respuesta = -1; // Asigna un valor fuera del rango válido para reiniciar el bucle
+      }
     }
-    }
+  }
 
     public static void casoDos() {
         //creo procedimiento caso resta
