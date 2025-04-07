@@ -2,36 +2,39 @@ package calculadora;
 import java.util.Scanner;
 class Main { 
   public static void main(String[] args) {
-  Scanner in =  new Scanner(System.in);   
-    int opcion=-1;//declaro variable
-    do{
-      menu();//procedimiento
-      opcion= in.nextInt();
-
-      do{
-        if(opcion<0 || opcion>4){
-            System.out.println("Ingrese un valor valido");
-            menu();//procedimiento
-            opcion= in.nextInt();
+    Scanner in = new Scanner(System.in);
+    int opcion;
+    
+    do {
+        try {
+            menu(); // Procedimiento
+            System.out.print("Ingrese una opción: ");
+            opcion = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
+            
+            if (opcion < 0 || opcion > 4) {
+                System.out.println("Ingrese un valor válido.");
+            } else {
+                switch (opcion) {
+                    case 1:
+                        casoUno(); // Llama al procedimiento
+                        break;
+                    case 2:
+                        casoDos();
+                        break;
+                    case 3:
+                        casoTres();
+                        break;
+                    case 4:
+                        casoCuatro(); // Llama al procedimiento
+                        break;
+                }
+            }
+        } catch (NumberFormatException e) { // Captura excepciones de formato inválido
+            System.out.println("Error: Por favor ingrese un número válido.");
+            opcion = -1; // Asigna un valor fuera del rango válido para que el bucle continue
         }
-      }while(opcion<0 || opcion>4);
-        switch (opcion) {
-            case 1: 
-            casoUno(); //llamo a procedimiento
-            break;
-        case 2:
-            casoDos();
-        break; 
-        case 3:
-            casoTres();       
-        break;
-        case 4:
-            casoCuatro();//lammo procedimiento
-        break;
-        }
-    }while(opcion!=0);
+    } while (opcion != 0);
   }
-
 
   public static int sumar(int numero1, int numero2){ //creo funcion sumar
     int resultado;
