@@ -1,6 +1,6 @@
 package calculadora;
 import java.util.Scanner;
-class Main { 
+class Main {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     int opcion;
@@ -122,24 +122,29 @@ class Main {
     resultado=sumar(numero1,numero2);//llamo funcion suma
     System.out.println("   ");
     System.out.println("La SUMA es de "+resultado);
-    while (respuesta != 0) {
+    in.nextLine(); // LIMPIO EL SCANNER
+
+    do{
       try {
-          System.out.println("Desea hacer otra suma? [1 para sí, 0 para no]:");
-          respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
-  
-          if (respuesta == 1) {
-              casoUno(); // Llama al procedimiento
-          } else if (respuesta == 0) {
-              menu(); // Llama al menú si decide no realizar más sumas
-          } else {
-              System.out.println("Por favor, ingrese un valor válido.");
-          }
-      } catch (NumberFormatException e) {
-          System.out.println("Error: Por favor, ingrese un número válido.");
-          respuesta = -1; // Asigna un valor fuera del rango válido para reiniciar el bucle          
+        System.out.print("Desea hacer otra suma? [1 para sí, 0 para no]: ");
+        respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
+        
+        if (respuesta < 0 || respuesta > 1) {
+            System.out.println("Ingrese un valor válido.");
+        } else if (respuesta == 1){
+          casoUno();
+        }
+      } catch (NumberFormatException e) { // Captura excepciones de formato inválido
+        System.out.println("Error: Por favor ingrese un número válido.");
+        respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
       }
+    } while (respuesta != 0);
+    menu();
     }
-  }
+//////////////////////////
+
+
+//////////////////////
 
     public static void casoDos() {
         //creo procedimiento caso resta
@@ -177,11 +182,25 @@ class Main {
         resultado = restar(numero1, numero2);//llamo funcion resta
         System.out.println("   ");
         System.out.println("La resta es de " + resultado);
-        System.out.println("Desea hacer otra resta? [1]/[0] (uno para si y cero para no)");
-        respuesta= in.nextInt();
-        if (respuesta == 1){
-          casoDos();
-        }
+        
+        in.nextLine(); // LIMPIO EL SCANNER
+    
+        do{
+          try {
+            System.out.print("Desea hacer otra resta? [1 para sí, 0 para no]: ");
+            respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
+            
+            if (respuesta < 0 || respuesta > 1) {
+                System.out.println("Ingrese un valor válido.");
+            } else if (respuesta == 1){
+              casoDos();
+            }
+          } catch (NumberFormatException e) { // Captura excepciones de formato inválido
+            System.out.println("Error: Por favor ingrese un número válido.");
+            respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+          }
+        } while (respuesta != 0);
+        menu();
     }
 
   public static void casoTres() { 
@@ -221,14 +240,28 @@ class Main {
     //llamo funcion multiplicar
     System.out.println("   ");
     System.out.println("La multiplicacion es de "+resultado);
-    System.out.println("Desea hacer otra multiplicacion? [1]/[0] (uno para si y cero para no)");
-    respuesta= in.nextInt();
-        if (respuesta == 1){
+
+    in.nextLine(); // LIMPIO EL SCANNER
+    
+    do{
+      try {
+        System.out.print("Desea hacer otra multiplicación? [1 para sí, 0 para no]: ");
+        respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
+        
+        if (respuesta < 0 || respuesta > 1) {
+            System.out.println("Ingrese un valor válido.");
+        } else if (respuesta == 1){
           casoTres();
         }
+      } catch (NumberFormatException e) { // Captura excepciones de formato inválido
+        System.out.println("Error: Por favor ingrese un número válido.");
+        respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+      }
+    } while (respuesta != 0);
+    menu();
   }
 
-    public static void casoCuatro() {//creo procedimiento division
+  public static void casoCuatro() {//creo procedimiento division
         Scanner in = new Scanner(System.in);
         int respuesta;
 
@@ -268,11 +301,24 @@ class Main {
         }
         resultado = dividir(numero1, numero2);//llamo funcion
         System.out.println("   ");
-        System.out.println("La divison es de " + resultado);
-        System.out.println("Desea hacer otra division? [1]/[0] (uno para si y cero para no)");
-        respuesta= in.nextInt();
-        if (respuesta == 1){
-          casoCuatro();
-        }
+        System.out.println("La división es de " + resultado);
+        in.nextLine(); // LIMPIO EL SCANNER
+  
+        do{
+          try {
+            System.out.print("Desea hacer otra división? [1 para sí, 0 para no]: ");
+            respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
+            
+            if (respuesta < 0 || respuesta > 1) {
+                System.out.println("Ingrese un valor válido.");
+            } else if (respuesta == 1){
+              casoCuatro();
+            }
+          } catch (NumberFormatException e) { // Captura excepciones de formato inválido
+            System.out.println("Error: Por favor ingrese un número válido.");
+            respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+          }
+        } while (respuesta != 0);
+        menu();
     }
-}
+  }
