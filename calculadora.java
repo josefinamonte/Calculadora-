@@ -16,16 +16,16 @@ class Main {
             } else {
                 switch (opcion) {
                     case 1:
-                        casoUno(); // Llama al procedimiento
+                        casoUno(in); // Llama al procedimiento
                         break;
                     case 2:
-                        casoDos();
+                        casoDos(in);
                         break;
                     case 3:
-                        casoTres();
+                        casoTres(in);
                         break;
                     case 4:
-                        casoCuatro(); // Llama al procedimiento
+                        casoCuatro(in); // Llama al procedimiento
                         break;
                 }
             }
@@ -36,13 +36,13 @@ class Main {
     } while (opcion != 0);
   }
 
-  public static int sumar(int numero1, int numero2){ //creo funcion sumar
+  public static int sumar(int numero1, int numero2){ // Funcion SUMAR
     int resultado;
     resultado = numero1+numero2;
     return resultado;
   }
 
-  public static int restar(int numero1, int numero2){ //creo funcion restar
+  public static int restar(int numero1, int numero2){ // Funcion RESTAR
     int resultado;
     if (numero1>numero2){
       resultado = numero1-numero2;
@@ -52,14 +52,14 @@ class Main {
     return resultado; 
   }
 
-  public static int multiplicar(int numero1, int numero2) { 
+  public static int multiplicar(int numero1, int numero2) { // Funcion MULTIPLICAR
     //creo funcion multiplicar
     int resultado;
     resultado = numero1*numero2;
     return resultado; 
   }
   
-  public static int dividir(int numero1, int numero2){//creo funcion dividir
+  public static int dividir(int numero1, int numero2){// Funcion DIVIDIR
     int resultado;
     if (numero1<numero2){
       resultado = numero2/numero1;
@@ -87,8 +87,7 @@ class Main {
         System.out.print("");
     }
 
-  public static void casoUno() {//creo procedimiento caso suma
-    Scanner in =  new Scanner(System.in);
+  public static void casoUno(Scanner in) { // Procedimiento caso SUMA
     int respuesta = -1; //defino una variable respuesta que será usada para repetir la suma.
      
     int numero1=0;
@@ -115,7 +114,7 @@ class Main {
         if (respuesta < 0 || respuesta > 1) {
             System.out.println("Ingrese un valor válido.");
         } else if (respuesta == 1){
-          casoUno();
+          casoUno(in);
         }
       } catch (NumberFormatException e) { // Captura excepciones de formato inválido
         System.out.println("Error: Por favor ingrese un número válido.");
@@ -129,9 +128,7 @@ class Main {
 
 //////////////////////
 
-    public static void casoDos() {
-        //creo procedimiento caso resta
-        Scanner in = new Scanner(System.in);
+    public static void casoDos(Scanner in) { // Procedimiento caso RESTA
         int respuesta;
 
         int numero1 = 0;
@@ -159,7 +156,7 @@ class Main {
             if (respuesta < 0 || respuesta > 1) {
                 System.out.println("Ingrese un valor válido.");
             } else if (respuesta == 1){
-              casoDos();
+              casoDos(in);
             }
           } catch (NumberFormatException e) { // Captura excepciones de formato inválido
             System.out.println("Error: Por favor ingrese un número válido.");
@@ -169,9 +166,7 @@ class Main {
         menu();
     }
 
-  public static void casoTres() { 
-   //creo procedimiento caso multiplicacion
-    Scanner in =  new Scanner(System.in);
+  public static void casoTres(Scanner in) {  // Procedimiento caso MULTIPLICACION
     int respuesta;
      
     int numero1=0;
@@ -179,7 +174,7 @@ class Main {
     int resultado;
     
     System.out.println("   ");
-    System.out.println(" Usted eligio MULTIPLICACION ");
+    System.out.println(" Usted eligio MULTIPLICACIÓN ");
     System.out.println("   ");
     System.out.println(" Por favor ingrese los numeros que desea multiplicar ");
     System.out.println("   ");
@@ -189,7 +184,7 @@ class Main {
     resultado=multiplicar(numero1,numero2);
     //llamo funcion multiplicar
     System.out.println("   ");
-    System.out.println("La multiplicacion es de "+resultado);
+    System.out.println("La multiplicación es de "+resultado);
 
     
     do{
@@ -200,7 +195,7 @@ class Main {
         if (respuesta < 0 || respuesta > 1) {
             System.out.println("Ingrese un valor válido.");
         } else if (respuesta == 1){
-          casoTres();
+          casoTres(in);
         }
       } catch (NumberFormatException e) { // Captura excepciones de formato inválido
         System.out.println("Error: Por favor ingrese un número válido.");
@@ -210,8 +205,7 @@ class Main {
     menu();
   }
 
-  public static void casoCuatro() {//creo procedimiento division
-        Scanner in = new Scanner(System.in);
+  public static void casoCuatro(Scanner in) {// Procedimiento DIVISION
         int respuesta;
 
         int numero1 = 0;
@@ -219,7 +213,7 @@ class Main {
         int resultado;
 
         System.out.println("   ");
-        System.out.println(" Usted eligio DIVISION ");
+        System.out.println(" Usted eligio DIVISIÓN ");
         System.out.println("   ");
         System.out.println(" Por favor ingrese los numeros que desea dividir ");
         System.out.println("   ");
@@ -243,7 +237,7 @@ class Main {
             if (respuesta < 0 || respuesta > 1) {
                 System.out.println("Ingrese un valor válido.");
             } else if (respuesta == 1){
-              casoCuatro();
+              casoCuatro(in);
             }
           } catch (NumberFormatException e) { // Captura excepciones de formato inválido
             System.out.println("Error: Por favor ingrese un número válido.");
