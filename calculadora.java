@@ -218,6 +218,12 @@ class Main {
         System.out.println(" Por favor ingrese los numeros que desea dividir ");
         System.out.println("   ");
         numero1= leerNumero(in, "Primer Numero: ");
+        while (numero1 == 0) {
+          System.out.println("No se puede dividir el 0");
+          System.out.println("Por favor ingrese un nuevo valor");
+          System.out.println(" ");
+          numero1= leerNumero(in, "Primer Numero: ");
+        }
         numero2= leerNumero(in, "Segundo Numero: ");
         while (numero2 == 0) {
             System.out.println("No se puede dividir con 0");
