@@ -260,7 +260,7 @@ class Main {
                   System.out.println("Error: Por favor ingrese un número entero positivo.");
               }
           } catch (NumberFormatException e) {
-              System.out.println("Error: Por favor ingrese un número válido.");
+              System.out.println("Error: Por favor ingrese un número válido (entero positivo).");
           }
       }
   }
