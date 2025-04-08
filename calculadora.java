@@ -219,7 +219,7 @@ class Main {
         System.out.println("   ");
         numero1= leerNumero(in, "Primer Numero: ");
         while (numero1 == 0) {
-          System.out.println("No se puede dividir el 0");
+          System.out.println("Dividir el 0 por cualquier número da 0.");
           System.out.println("Por favor ingrese un nuevo valor");
           System.out.println(" ");
           numero1= leerNumero(in, "Primer Numero: ");
