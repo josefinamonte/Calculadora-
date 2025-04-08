@@ -100,29 +100,12 @@ class Main {
     System.out.println("   ");
     System.out.println(" Por favor ingrese los numeros que desea sumar ");
     System.out.println("   ");
-    System.out.println(" Primer Numero: ");
-    System.out.println("   ");
-    numero1=in.nextInt();
-    do{
-      if (numero1<0){
-        System.out.println("Ingrese un valor valido (entero positivo)");
-        numero1=in.nextInt();
-      }
-    }while(numero1<0);
-    System.out.println("   ");
-    System.out.println(" Segundo Numero: ");
-    System.out.println("   ");
-    numero2=in.nextInt();
-    do{
-      if (numero2<0){
-        System.out.println("Ingrese un valor valido (entero positivo)");
-        numero2=in.nextInt();
-      } 
-    }while(numero2<0);
+    numero1= leerNumero(in, "Primer Numero: ");
+    numero2= leerNumero(in, "Segundo Numero: ");
+
     resultado=sumar(numero1,numero2);//llamo funcion suma
     System.out.println("   ");
     System.out.println("La SUMA es de "+resultado);
-    in.nextLine(); // LIMPIO EL SCANNER
 
     do{
       try {
@@ -160,30 +143,13 @@ class Main {
         System.out.println("   ");
         System.out.println(" Por favor ingrese los numeros que desea restar ");
         System.out.println("   ");
-        System.out.println(" Primer Numero: ");
-        System.out.println("   ");
-        numero1=in.nextInt();
-        do{
-          if (numero1<0){
-            System.out.println("Ingrese un valor valido (entero positivo)");
-            numero1=in.nextInt();
-          }
-        }while(numero1<0);
-        System.out.println("   ");
-        System.out.println(" Segundo Numero: ");
-        System.out.println("   ");
-        numero2=in.nextInt();
-        do{
-          if (numero2<0){
-            System.out.println("Ingrese un valor valido (entero positivo)");
-            numero2=in.nextInt();
-          } 
-        }while(numero2<0);
+        numero1= leerNumero(in, "Primer Numero: ");
+        numero2= leerNumero(in, "Segundo Numero: ");
+
         resultado = restar(numero1, numero2);//llamo funcion resta
         System.out.println("   ");
         System.out.println("La resta es de " + resultado);
         
-        in.nextLine(); // LIMPIO EL SCANNER
     
         do{
           try {
@@ -217,31 +183,14 @@ class Main {
     System.out.println("   ");
     System.out.println(" Por favor ingrese los numeros que desea multiplicar ");
     System.out.println("   ");
-    System.out.println(" Primer Numero: ");
-    System.out.println("   ");
-    numero1=in.nextInt();
-    do{
-      if (numero1<0){
-        System.out.println("Ingrese un valor valido (entero positivo)");
-        numero1=in.nextInt();
-      }
-    }while(numero1<0);
-    System.out.println("   ");
-    System.out.println(" Segundo Numero: ");
-    System.out.println("   ");
-    numero2=in.nextInt();
-    do{
-      if (numero2<0){
-        System.out.println("Ingrese un valor valido (entero positivo)");
-        numero2=in.nextInt();
-      } 
-    }while(numero2<0);
+    numero1= leerNumero(in, "Primer Numero: ");
+    numero2= leerNumero(in, "Segundo Numero: ");
+
     resultado=multiplicar(numero1,numero2);
     //llamo funcion multiplicar
     System.out.println("   ");
     System.out.println("La multiplicacion es de "+resultado);
 
-    in.nextLine(); // LIMPIO EL SCANNER
     
     do{
       try {
@@ -274,35 +223,17 @@ class Main {
         System.out.println("   ");
         System.out.println(" Por favor ingrese los numeros que desea dividir ");
         System.out.println("   ");
-        System.out.println(" Primer Numero: ");
-        System.out.println("   ");
-        numero1=in.nextInt();
-        do{
-          if (numero1<0){
-            System.out.println("Ingrese un valor valido (entero positivo)");
-            numero1=in.nextInt();
-          }
-        }while(numero1<0);
-        System.out.println("   ");
-        System.out.println(" Segundo Numero: ");
-        System.out.println("   ");
-        numero2=in.nextInt();
-        do{
-          if (numero2<0){
-            System.out.println("Ingrese un valor valido (entero positivo)");
-            numero2=in.nextInt();
-          } 
-        }while(numero2<0);//controlo numer dos que no sea 0
+        numero1= leerNumero(in, "Primer Numero: ");
+        numero2= leerNumero(in, "Segundo Numero: ");
         while (numero2 == 0) {
             System.out.println("No se puede dividir con 0");
             System.out.println("Por favor ingrese un nuevo valor");
             System.out.println(" ");
-            numero2 = in.nextInt();
+            numero2 = leerNumero(in, "Segundo Numero: ");
         }
         resultado = dividir(numero1, numero2);//llamo funcion
         System.out.println("   ");
         System.out.println("La división es de " + resultado);
-        in.nextLine(); // LIMPIO EL SCANNER
   
         do{
           try {
@@ -321,4 +252,22 @@ class Main {
         } while (respuesta != 0);
         menu();
     }
+
+    public static int leerNumero(Scanner in, String mensaje) { // verifica que sea entero y positivo
+      int numero;
+      while (true) { 
+          try {
+              System.out.println(mensaje);
+              numero = Integer.parseInt(in.nextLine()); // Intenta convertir la entrada a entero
+  
+              if (numero >= 0) { // Verifica que el número sea positivo
+                  return numero; // Devuelve el número si es válido y positivo
+              } else {
+                  System.out.println("Error: Por favor ingrese un número entero positivo.");
+              }
+          } catch (NumberFormatException e) {
+              System.out.println("Error: Por favor ingrese un número válido.");
+          }
+      }
+  }
   }
