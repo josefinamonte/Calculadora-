@@ -121,12 +121,7 @@ class Main {
         respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
       }
     } while (respuesta != 0);
-    menu();
     }
-//////////////////////////
-
-
-//////////////////////
 
     public static void casoDos(Scanner in) { // Procedimiento caso RESTA
         int respuesta;
@@ -163,7 +158,6 @@ class Main {
             respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
           }
         } while (respuesta != 0);
-        menu();
     }
 
   public static void casoTres(Scanner in) {  // Procedimiento caso MULTIPLICACION
@@ -202,7 +196,6 @@ class Main {
         respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
       }
     } while (respuesta != 0);
-    menu();
   }
 
   public static void casoCuatro(Scanner in) {// Procedimiento DIVISION
@@ -250,7 +243,6 @@ class Main {
             respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
           }
         } while (respuesta != 0);
-        menu();
     }
 
     public static int leerNumero(Scanner in, String mensaje) { // verifica que sea entero y positivo
