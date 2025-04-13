@@ -88,162 +88,123 @@ class Main {
     }
 
   public static void casoUno(Scanner in) { // Procedimiento caso SUMA
-    int respuesta = -1; //defino una variable respuesta que será usada para repetir la suma.
-     
-    int numero1=0;
-    int numero2=0; 
-    int resultado;
-    
-    System.out.println("   ");
-    System.out.println(" Usted eligio SUMA ");
-    System.out.println("   ");
-    System.out.println(" Por favor ingrese los numeros que desea sumar ");
-    System.out.println("   ");
-    numero1= leerNumero(in, "Primer Numero: ");
-    numero2= leerNumero(in, "Segundo Numero: ");
-
-    resultado=sumar(numero1,numero2);//llamo funcion suma
-    System.out.println("   ");
-    System.out.println("La SUMA es de "+resultado);
+    int respuesta = 1; //defino una variable respuesta que será usada para repetir la suma.
 
     do{
-      try {
-        System.out.print("Desea hacer otra suma? [1 para sí, 0 para no]: ");
-        respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
-        
-        if (respuesta < 0 || respuesta > 1) {
-            System.out.println("Ingrese un valor válido.");
-        } else if (respuesta == 1){
-          casoUno(in);
-        }
-      } catch (NumberFormatException e) { // Captura excepciones de formato inválido
-        System.out.println("Error: Por favor ingrese un número válido.");
-        respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+      int numero1=0;
+      int numero2=0; 
+      int resultado;
+      
+      System.out.println("   ");
+      System.out.println(" Usted eligio SUMA ");
+      System.out.println("   ");
+      System.out.println(" Por favor ingrese los numeros que desea sumar ");
+      System.out.println("   ");
+      numero1= leerNumero(in, "Primer Numero: ");
+      numero2= leerNumero(in, "Segundo Numero: ");
+
+      resultado=sumar(numero1,numero2);//llamo funcion suma
+      System.out.println("   ");
+      System.out.println("La SUMA es de "+resultado);
+      respuesta = leerNumero(in, "Desea hacer otra suma? [1 para sí, 0 para no]: ");
+      while (respuesta < 0 || respuesta > 1) {
+        System.out.println("Ingrese un valor válido.");
+        respuesta = leerNumero(in, "Desea hacer otra suma? [1 para sí, 0 para no]: ");
       }
-    } while (respuesta != 0);
+    } while (respuesta == 1);
     }
 
     public static void casoDos(Scanner in) { // Procedimiento caso RESTA
-        int respuesta;
+        int respuesta = 1;
 
-        int numero1 = 0;
-        int numero2 = 0;
-        int resultado;
-
-        System.out.println("   ");
-        System.out.println(" Usted eligio RESTA ");
-        System.out.println("   ");
-        System.out.println(" Por favor ingrese los numeros que desea restar ");
-        System.out.println("   ");
-        numero1= leerNumero(in, "Primer Numero: ");
-        numero2= leerNumero(in, "Segundo Numero: ");
-
-        resultado = restar(numero1, numero2);//llamo funcion resta
-        System.out.println("   ");
-        System.out.println("La resta es de " + resultado);
-        
-    
         do{
-          try {
-            System.out.print("Desea hacer otra resta? [1 para sí, 0 para no]: ");
-            respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
-            
-            if (respuesta < 0 || respuesta > 1) {
-                System.out.println("Ingrese un valor válido.");
-            } else if (respuesta == 1){
-              casoDos(in);
-            }
-          } catch (NumberFormatException e) { // Captura excepciones de formato inválido
-            System.out.println("Error: Por favor ingrese un número válido.");
-            respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+          int numero1=0;
+          int numero2=0; 
+          int resultado;
+          
+          System.out.println("   ");
+          System.out.println(" Usted eligio RESTA ");
+          System.out.println("   ");
+          System.out.println(" Por favor ingrese los numeros que desea restar ");
+          System.out.println("   ");
+          numero1= leerNumero(in, "Primer Numero: ");
+          numero2= leerNumero(in, "Segundo Numero: ");
+    
+          resultado=restar(numero1,numero2);//llamo funcion
+          System.out.println("   ");
+          System.out.println("La resta es de "+resultado);
+          respuesta = leerNumero(in, "Desea hacer otra resta? [1 para sí, 0 para no]: ");
+          while (respuesta < 0 || respuesta > 1) {
+            System.out.println("Ingrese un valor válido.");
+            respuesta = leerNumero(in, "Desea hacer otra resta? [1 para sí, 0 para no]: ");
           }
-        } while (respuesta != 0);
-    }
+        } while (respuesta == 1);
+        }
 
   public static void casoTres(Scanner in) {  // Procedimiento caso MULTIPLICACION
-    int respuesta;
-     
-    int numero1=0;
-    int numero2=0; 
-    int resultado;
-    
-    System.out.println("   ");
-    System.out.println(" Usted eligio MULTIPLICACIÓN ");
-    System.out.println("   ");
-    System.out.println(" Por favor ingrese los numeros que desea multiplicar ");
-    System.out.println("   ");
-    numero1= leerNumero(in, "Primer Numero: ");
-    numero2= leerNumero(in, "Segundo Numero: ");
-
-    resultado=multiplicar(numero1,numero2);
-    //llamo funcion multiplicar
-    System.out.println("   ");
-    System.out.println("La multiplicación es de "+resultado);
-
+    int respuesta = 1;
     
     do{
-      try {
-        System.out.print("Desea hacer otra multiplicación? [1 para sí, 0 para no]: ");
-        respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
-        
-        if (respuesta < 0 || respuesta > 1) {
-            System.out.println("Ingrese un valor válido.");
-        } else if (respuesta == 1){
-          casoTres(in);
-        }
-      } catch (NumberFormatException e) { // Captura excepciones de formato inválido
-        System.out.println("Error: Por favor ingrese un número válido.");
-        respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+      int numero1=0;
+      int numero2=0; 
+      int resultado;
+      
+      System.out.println("   ");
+      System.out.println(" Usted eligio MULTIPLICACIÓN ");
+      System.out.println("   ");
+      System.out.println(" Por favor ingrese los numeros que desea multiplicar ");
+      System.out.println("   ");
+      numero1= leerNumero(in, "Primer Numero: ");
+      numero2= leerNumero(in, "Segundo Numero: ");
+
+      resultado=multiplicar(numero1,numero2);//llamo funcion
+      System.out.println("   ");
+      System.out.println("La multiplicación es de "+resultado);
+      respuesta = leerNumero(in, "Desea hacer otra multiplicación? [1 para sí, 0 para no]: ");
+      while (respuesta < 0 || respuesta > 1) {
+        System.out.println("Ingrese un valor válido.");
+        respuesta = leerNumero(in, "Desea hacer otra multiplicación? [1 para sí, 0 para no]: ");
       }
-    } while (respuesta != 0);
-  }
+    } while (respuesta == 1);
+    }
 
   public static void casoCuatro(Scanner in) {// Procedimiento DIVISION
-        int respuesta;
-
-        int numero1 = 0;
-        int numero2 = 0;
-        int resultado;
-
-        System.out.println("   ");
-        System.out.println(" Usted eligio DIVISIÓN ");
-        System.out.println("   ");
-        System.out.println(" Por favor ingrese los numeros que desea dividir ");
-        System.out.println("   ");
-        numero1= leerNumero(in, "Primer Numero: ");
-        while (numero1 == 0) {
-          System.out.println("Dividir el 0 por cualquier número da 0.");
-          System.out.println("Por favor ingrese un nuevo valor");
-          System.out.println(" ");
+        int respuesta = 1;
+    
+        do{
+          int numero1=0;
+          int numero2=0; 
+          int resultado;
+          
+          System.out.println(" Usted eligio DIVISIÓN ");
+          System.out.println("   ");
+          System.out.println(" Por favor ingrese los numeros que desea dividir ");
+          System.out.println("   ");
           numero1= leerNumero(in, "Primer Numero: ");
-        }
-        numero2= leerNumero(in, "Segundo Numero: ");
-        while (numero2 == 0) {
-            System.out.println("No se puede dividir con 0");
+          while (numero1 == 0) {
+            System.out.println("Dividir el 0 por cualquier número da 0.");
             System.out.println("Por favor ingrese un nuevo valor");
             System.out.println(" ");
-            numero2 = leerNumero(in, "Segundo Numero: ");
-        }
-        resultado = dividir(numero1, numero2);//llamo funcion
-        System.out.println("   ");
-        System.out.println("La división es de " + resultado);
-  
-        do{
-          try {
-            System.out.print("Desea hacer otra división? [1 para sí, 0 para no]: ");
-            respuesta = Integer.parseInt(in.nextLine()); // Convierte la entrada a entero
-            
-            if (respuesta < 0 || respuesta > 1) {
-                System.out.println("Ingrese un valor válido.");
-            } else if (respuesta == 1){
-              casoCuatro(in);
-            }
-          } catch (NumberFormatException e) { // Captura excepciones de formato inválido
-            System.out.println("Error: Por favor ingrese un número válido.");
-            respuesta = -1; // Asigna un valor fuera del rango válido para que el bucle continue
+            numero1= leerNumero(in, "Primer Numero: ");
           }
-        } while (respuesta != 0);
-    }
+          numero2= leerNumero(in, "Segundo Numero: ");
+          while (numero2 == 0) {
+              System.out.println("No se puede dividir con 0");
+              System.out.println("Por favor ingrese un nuevo valor");
+              System.out.println(" ");
+              numero2 = leerNumero(in, "Segundo Numero: ");
+          }
+          resultado = dividir(numero1, numero2);//llamo funcion
+          System.out.println("   ");
+          System.out.println("La división es de "+resultado);
+          
+          respuesta = leerNumero(in, "Desea hacer otra división? [1 para sí, 0 para no]: ");
+          while (respuesta < 0 || respuesta > 1) {
+            System.out.println("Ingrese un valor válido.");
+            respuesta = leerNumero(in, "Desea hacer otra división? [1 para sí, 0 para no]: ");
+          }
+        } while (respuesta == 1);
+        }
 
     public static int leerNumero(Scanner in, String mensaje) { // verifica que sea entero y positivo
       int numero;
