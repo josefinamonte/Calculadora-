@@ -1,12 +1,13 @@
 import java.util.Scanner;
 
 /**
- * Clase principal que ejecuta una calculadora básica por consola.
- * Permite sumar, restar, multiplicar y dividir números enteros positivos.
+ * 
+ * @brief Clase principal que ejecuta una calculadora básica por consola. Permite sumar, restar, multiplicar y dividir números enteros positivos.
  */
 public class App {
     /**
-   * Método principal. Controla el menú principal y la lógica de selección.
+   *
+   * @brief Método principal. Controla el menú principal y la lógica de selección.
    * @param args Argumentos de línea de comandos (no se utilizan).
    */
   public static void main(String[] args) {
@@ -45,7 +46,8 @@ public class App {
   }
 
   /**
-   * Suma dos números enteros.
+   * 
+   * @brief Suma dos números enteros.
    * @param numero1 Primer número.
    * @param numero2 Segundo número.
    * @return Resultado de la suma.
@@ -55,7 +57,8 @@ public class App {
   }
 
   /**
-   * Resta dos números enteros (resultado siempre positivo).
+   * 
+   * @brief Resta dos números enteros (resultado siempre positivo).
    * @param numero1 Primer número.
    * @param numero2 Segundo número.
    * @return Resultado de la resta.
@@ -65,7 +68,8 @@ public class App {
   }
 
   /**
-   * Multiplica dos números enteros.
+   * 
+   * @brief Multiplica dos números enteros.
    * @param numero1 Primer número.
    * @param numero2 Segundo número.
    * @return Resultado de la multiplicación.
@@ -75,7 +79,8 @@ public class App {
   }
 
   /**
-   * Divide dos números enteros (mayor / menor).
+   * 
+   * @brief Divide dos números enteros (mayor / menor).
    * @param numero1 Primer número.
    * @param numero2 Segundo número.
    * @return Resultado de la división.
@@ -85,7 +90,8 @@ public class App {
   }
 
   /**
-   * Muestra el menú de opciones en consola.
+   * 
+   * @brief Muestra el menú de opciones en consola.
    */
   public static void menu() {
     System.out.println("************************************************************");
@@ -99,7 +105,8 @@ public class App {
   }
 
   /**
-   * Ejecuta el flujo de la operación de suma.
+   * 
+   * @brief Ejecuta el flujo de la operación de suma.
    * @param in Objeto Scanner para entrada del usuario.
    */
   public static void casoUno(Scanner in) {
@@ -118,7 +125,8 @@ public class App {
   }
 
   /**
-   * Ejecuta el flujo de la operación de resta.
+   * 
+   * @brief Ejecuta el flujo de la operación de resta.
    * @param in Objeto Scanner para entrada del usuario.
    */
   public static void casoDos(Scanner in) {
@@ -137,7 +145,8 @@ public class App {
   }
 
   /**
-   * Ejecuta el flujo de la operación de multiplicación.
+   * 
+   * @brief Ejecuta el flujo de la operación de multiplicación.
    * @param in Objeto Scanner para entrada del usuario.
    */
   public static void casoTres(Scanner in) {
@@ -156,7 +165,8 @@ public class App {
   }
 
   /**
-   * Ejecuta el flujo de la operación de división, con validación de división por cero.
+   * 
+   * @brief Ejecuta el flujo de la operación de división, con validación de división por cero.
    * @param in Objeto Scanner para entrada del usuario.
    */
   public static void casoCuatro(Scanner in) {
@@ -183,7 +193,8 @@ public class App {
   }
 
   /**
-   * Lee un número entero positivo desde la entrada del usuario.
+   * 
+   * @brief Lee un número entero positivo desde la entrada del usuario.
    * @param in Objeto Scanner para entrada del usuario.
    * @param mensaje Mensaje mostrado al usuario.
    * @return Número ingresado por el usuario.
